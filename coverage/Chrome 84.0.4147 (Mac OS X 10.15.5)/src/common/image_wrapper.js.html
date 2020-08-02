@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/common/image_wrapper.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/common/</a> image_wrapper.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.05% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>26/162</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.16% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.88% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.92% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/158</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">1 branch</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import SubImage from './subImage';
+import {hsv2rgb} from '../common/cv_utils';
+import ArrayHelper from '../common/array_helper';
+const vec2 = {
+    clone: require('gl-vec2/clone'),
+};
+&nbsp;
+/**
+ * Represents a basic image combining the data and size.
+ * In addition, some methods for manipulation are contained.
+ * @param size {x,y} The size of the image in pixel
+ * @param data {Array} If given, a flat array containing the pixel data
+ * @param ArrayType {Type} If given, the desired DataType of the Array (may be typed/non-typed)
+ * @param initialize {Boolean} Indicating if the array should be initialized on creation.
+ * @returns {ImageWrapper}
+ */
+<span class="fstat-no" title="function not covered" >function ImageWrapper(size, data, ArrayType, initialize) {</span>
+    if (<span class="cstat-no" title="statement not covered" >!data) {</span>
+        if (<span class="cstat-no" title="statement not covered" >ArrayType) {</span>
+            this.<span class="cstat-no" title="statement not covered" >data = new ArrayType(size.x * size.y);</span>
+            if (<span class="cstat-no" title="statement not covered" >ArrayType === Array &amp;&amp; initialize) {</span>
+                ArrayHelper.<span class="cstat-no" title="statement not covered" >init(this.data, 0);</span>
+            }
+        } else {
+            this.<span class="cstat-no" title="statement not covered" >data = new Uint8Array(size.x * size.y);</span>
+            if (<span class="cstat-no" title="statement not covered" >Uint8Array === Array &amp;&amp; initialize) {</span>
+                ArrayHelper.<span class="cstat-no" title="statement not covered" >init(this.data, 0);</span>
+            }
+        }
+    } else {
+        this.<span class="cstat-no" title="statement not covered" >data = data;</span>
+    }
+    this.<span class="cstat-no" title="statement not covered" >size = size;</span>
+}
+&nbsp;
+/**
+ * tests if a position is within the image with a given offset
+ * @param imgRef {x, y} The location to test
+ * @param border Number the padding value in pixel
+ * @returns {Boolean} true if location inside the image's border, false otherwise
+ * @see cvd/image.h
+ */
+ImageWrapper.prototype.inImageWithBorder = <span class="fstat-no" title="function not covered" >function(imgRef, border) {</span>
+    return (<span class="cstat-no" title="statement not covered" >imgRef.x &gt;= border)</span>
+        &amp;&amp; (imgRef.y &gt;= border)
+        &amp;&amp; (imgRef.x &lt; (this.size.x - border))
+        &amp;&amp; (imgRef.y &lt; (this.size.y - border));
+};
+&nbsp;
+/**
+ * Performs bilinear sampling
+ * @param inImg Image to extract sample from
+ * @param x the x-coordinate
+ * @param y the y-coordinate
+ * @returns the sampled value
+ * @see cvd/vision.h
+ */
+ImageWrapper.sample = <span class="fstat-no" title="function not covered" >function(inImg, x, y) {</span>
+    var <span class="cstat-no" title="statement not covered" >lx = Math.floor(x);</span>
+    var <span class="cstat-no" title="statement not covered" >ly = Math.floor(y);</span>
+    var <span class="cstat-no" title="statement not covered" >w = inImg.size.x;</span>
+    var <span class="cstat-no" title="statement not covered" >base = ly * inImg.size.x + lx;</span>
+    var <span class="cstat-no" title="statement not covered" >a = inImg.data[base + 0];</span>
+    var <span class="cstat-no" title="statement not covered" >b = inImg.data[base + 1];</span>
+    var <span class="cstat-no" title="statement not covered" >c = inImg.data[base + w];</span>
+    var <span class="cstat-no" title="statement not covered" >d = inImg.data[base + w + 1];</span>
+    var <span class="cstat-no" title="statement not covered" >e = a - b;</span>
+    x -= <span class="cstat-no" title="statement not covered" >lx;</span>
+    y -= <span class="cstat-no" title="statement not covered" >ly;</span>
+&nbsp;
+    var <span class="cstat-no" title="statement not covered" >result = Math.floor(x * (y * (e - c + d) - e) + y * (c - a) + a);</span>
+    return <span class="cstat-no" title="statement not covered" >result;</span>
+};
+&nbsp;
+/**
+ * Initializes a given array. Sets each element to zero.
+ * @param array {Array} The array to initialize
+ */
+ImageWrapper.clearArray = <span class="fstat-no" title="function not covered" >function(array) {</span>
+    var <span class="cstat-no" title="statement not covered" >l = array.length;</span>
+    while (<span class="cstat-no" title="statement not covered" >l--) {</span>
+        array[<span class="cstat-no" title="statement not covered" >l] = 0;</span>
+    }
+};
+&nbsp;
+/**
+ * Creates a {SubImage} from the current image ({this}).
+ * @param from {ImageRef} The position where to start the {SubImage} from. (top-left corner)
+ * @param size {ImageRef} The size of the resulting image
+ * @returns {SubImage} A shared part of the original image
+ */
+ImageWrapper.prototype.subImage = <span class="fstat-no" title="function not covered" >function(from, size) {</span>
+    return <span class="cstat-no" title="statement not covered" >new SubImage(from, size, this);</span>
+};
+&nbsp;
+/**
+ * Creates an {ImageWrapper) and copies the needed underlying image-data area
+ * @param imageWrapper {ImageWrapper} The target {ImageWrapper} where the data should be copied
+ * @param from {ImageRef} The location where to copy from (top-left location)
+ */
+ImageWrapper.prototype.subImageAsCopy = <span class="fstat-no" title="function not covered" >function(imageWrapper, from) {</span>
+    var <span class="cstat-no" title="statement not covered" >sizeY = imageWrapper.size.y, sizeX = imageWrapper.size.x;</span>
+    var <span class="cstat-no" title="statement not covered" >x, y;</span>
+    for ( <span class="cstat-no" title="statement not covered" >x = 0; x &lt; sizeX; x++) {</span>
+        for ( <span class="cstat-no" title="statement not covered" >y = 0; y &lt; sizeY; y++) {</span>
+            imageWrapper.<span class="cstat-no" title="statement not covered" >data[y * sizeX + x] = this.data[(from.y + y) * this.size.x + from.x + x];</span>
+        }
+    }
+};
+&nbsp;
+ImageWrapper.prototype.copyTo = <span class="fstat-no" title="function not covered" >function(imageWrapper) {</span>
+    var <span class="cstat-no" title="statement not covered" >length = this.data.length, srcData = this.data, dstData = imageWrapper.data;</span>
+&nbsp;
+    while (<span class="cstat-no" title="statement not covered" >length--) {</span>
+        dstData[<span class="cstat-no" title="statement not covered" >length] = srcData[length];</span>
+    }
+};
+&nbsp;
+/**
+ * Retrieves a given pixel position from the image
+ * @param x {Number} The x-position
+ * @param y {Number} The y-position
+ * @returns {Number} The grayscale value at the pixel-position
+ */
+ImageWrapper.prototype.get = <span class="fstat-no" title="function not covered" >function(x, y) {</span>
+    return <span class="cstat-no" title="statement not covered" >this.data[y * this.size.x + x];</span>
+};
+&nbsp;
+/**
+ * Retrieves a given pixel position from the image
+ * @param x {Number} The x-position
+ * @param y {Number} The y-position
+ * @returns {Number} The grayscale value at the pixel-position
+ */
+ImageWrapper.prototype.getSafe = <span class="fstat-no" title="function not covered" >function(x, y) {</span>
+    var <span class="cstat-no" title="statement not covered" >i;</span>
+&nbsp;
+    if (<span class="cstat-no" title="statement not covered" >!this.indexMapping) {</span>
+        this.<span class="cstat-no" title="statement not covered" >indexMapping = {</span>
+            x: [],
+            y: []
+        };
+        for (<span class="cstat-no" title="statement not covered" >i = 0; i &lt; this.size.x; i++) {</span>
+            this.<span class="cstat-no" title="statement not covered" >indexMapping.x[i] = i;</span>
+            this.<span class="cstat-no" title="statement not covered" >indexMapping.x[i + this.size.x] = i;</span>
+        }
+        for (<span class="cstat-no" title="statement not covered" >i = 0; i &lt; this.size.y; i++) {</span>
+            this.<span class="cstat-no" title="statement not covered" >indexMapping.y[i] = i;</span>
+            this.<span class="cstat-no" title="statement not covered" >indexMapping.y[i + this.size.y] = i;</span>
+        }
+    }
+    return <span class="cstat-no" title="statement not covered" >this.data[(this.indexMapping.y[y + this.size.y]) * this.size.x + this.indexMapping.x[x + this.size.x]];</span>
+};
+&nbsp;
+/**
+ * Sets a given pixel position in the image
+ * @param x {Number} The x-position
+ * @param y {Number} The y-position
+ * @param value {Number} The grayscale value to set
+ * @returns {ImageWrapper} The Image itself (for possible chaining)
+ */
+ImageWrapper.prototype.set = <span class="fstat-no" title="function not covered" >function(x, y, value) {</span>
+    this.<span class="cstat-no" title="statement not covered" >data[y * this.size.x + x] = value;</span>
+    return <span class="cstat-no" title="statement not covered" >this;</span>
+};
+&nbsp;
+/**
+ * Sets the border of the image (1 pixel) to zero
+ */
+ImageWrapper.prototype.zeroBorder = <span class="fstat-no" title="function not covered" >function() {</span>
+    var <span class="cstat-no" title="statement not covered" >i, width = this.size.x, height = this.size.y, data = this.data;</span>
+    for ( <span class="cstat-no" title="statement not covered" >i = 0; i &lt; width; i++) {</span>
+        data[<span class="cstat-no" title="statement not covered" >i] = data[(height - 1) * width + i] = 0;</span>
+    }
+    for ( <span class="cstat-no" title="statement not covered" >i = 1; i &lt; height - 1; i++) {</span>
+        data[<span class="cstat-no" title="statement not covered" >i * width] = data[i * width + (width - 1)] = 0;</span>
+    }
+};
+&nbsp;
+/**
+ * Inverts a binary image in place
+ */
+ImageWrapper.prototype.invert = <span class="fstat-no" title="function not covered" >function() {</span>
+    var <span class="cstat-no" title="statement not covered" >data = this.data, length = data.length;</span>
+&nbsp;
+    while (<span class="cstat-no" title="statement not covered" >length--) {</span>
+        data[<span class="cstat-no" title="statement not covered" >length] = data[length] ? 0 : 1;</span>
+    }
+};
+&nbsp;
+ImageWrapper.prototype.convolve = <span class="fstat-no" title="function not covered" >function(kernel) {</span>
+    var <span class="cstat-no" title="statement not covered" >x, y, kx, ky, kSize = (kernel.length / 2) | 0, accu = 0;</span>
+    for ( <span class="cstat-no" title="statement not covered" >y = 0; y &lt; this.size.y; y++) {</span>
+        for ( <span class="cstat-no" title="statement not covered" >x = 0; x &lt; this.size.x; x++) {</span>
+            accu = <span class="cstat-no" title="statement not covered" >0;</span>
+            for ( <span class="cstat-no" title="statement not covered" >ky = -kSize; ky &lt;= kSize; ky++) {</span>
+                for ( <span class="cstat-no" title="statement not covered" >kx = -kSize; kx &lt;= kSize; kx++) {</span>
+                    accu += <span class="cstat-no" title="statement not covered" >kernel[ky + kSize][kx + kSize] * this.getSafe(x + kx, y + ky);</span>
+                }
+            }
+            this.<span class="cstat-no" title="statement not covered" >data[y * this.size.x + x] = accu;</span>
+        }
+    }
+};
+&nbsp;
+ImageWrapper.prototype.moments = <span class="fstat-no" title="function not covered" >function(labelcount) {</span>
+    var <span class="cstat-no" title="statement not covered" >data = this.data,</span>
+        x,
+        y,
+        height = this.size.y,
+        width = this.size.x,
+        val,
+        ysq,
+        labelsum = [],
+        i,
+        label,
+        mu11,
+        mu02,
+        mu20,
+        x_,
+        y_,
+        tmp,
+        result = [],
+        PI = Math.PI,
+        PI_4 = PI / 4;
+&nbsp;
+    if (<span class="cstat-no" title="statement not covered" >labelcount &lt;= 0) {</span>
+        return <span class="cstat-no" title="statement not covered" >result;</span>
+    }
+&nbsp;
+    for ( <span class="cstat-no" title="statement not covered" >i = 0; i &lt; labelcount; i++) {</span>
+        labelsum[<span class="cstat-no" title="statement not covered" >i] = {</span>
+            m00: 0,
+            m01: 0,
+            m10: 0,
+            m11: 0,
+            m02: 0,
+            m20: 0,
+            theta: 0,
+            rad: 0
+        };
+    }
+&nbsp;
+    for ( <span class="cstat-no" title="statement not covered" >y = 0; y &lt; height; y++) {</span>
+        ysq = <span class="cstat-no" title="statement not covered" >y * y;</span>
+        for ( <span class="cstat-no" title="statement not covered" >x = 0; x &lt; width; x++) {</span>
+            val = <span class="cstat-no" title="statement not covered" >data[y * width + x];</span>
+            if (<span class="cstat-no" title="statement not covered" >val &gt; 0) {</span>
+                label = <span class="cstat-no" title="statement not covered" >labelsum[val - 1];</span>
+                label.<span class="cstat-no" title="statement not covered" >m00 += 1;</span>
+                label.<span class="cstat-no" title="statement not covered" >m01 += y;</span>
+                label.<span class="cstat-no" title="statement not covered" >m10 += x;</span>
+                label.<span class="cstat-no" title="statement not covered" >m11 += x * y;</span>
+                label.<span class="cstat-no" title="statement not covered" >m02 += ysq;</span>
+                label.<span class="cstat-no" title="statement not covered" >m20 += x * x;</span>
+            }
+        }
+    }
+&nbsp;
+    for ( <span class="cstat-no" title="statement not covered" >i = 0; i &lt; labelcount; i++) {</span>
+        label = <span class="cstat-no" title="statement not covered" >labelsum[i];</span>
+        if (<span class="cstat-no" title="statement not covered" >!isNaN(label.m00) &amp;&amp; label.m00 !== 0) {</span>
+            x_ = <span class="cstat-no" title="statement not covered" >label.m10 / label.m00;</span>
+            y_ = <span class="cstat-no" title="statement not covered" >label.m01 / label.m00;</span>
+            mu11 = <span class="cstat-no" title="statement not covered" >label.m11 / label.m00 - x_ * y_;</span>
+            mu02 = <span class="cstat-no" title="statement not covered" >label.m02 / label.m00 - y_ * y_;</span>
+            mu20 = <span class="cstat-no" title="statement not covered" >label.m20 / label.m00 - x_ * x_;</span>
+            tmp = <span class="cstat-no" title="statement not covered" >(mu02 - mu20) / (2 * mu11);</span>
+            tmp = <span class="cstat-no" title="statement not covered" >0.5 * Math.atan(tmp) + (mu11 &gt;= 0 ? PI_4 : -PI_4 ) + PI;</span>
+            label.<span class="cstat-no" title="statement not covered" >theta = (tmp * 180 / PI + 90) % 180 - 90;</span>
+            if (<span class="cstat-no" title="statement not covered" >label.theta &lt; 0) {</span>
+                label.<span class="cstat-no" title="statement not covered" >theta += 180;</span>
+            }
+            label.<span class="cstat-no" title="statement not covered" >rad = tmp &gt; PI ? tmp - PI : tmp;</span>
+            label.<span class="cstat-no" title="statement not covered" >vec = vec2.clone([Math.cos(tmp), Math.sin(tmp)]);</span>
+            result.<span class="cstat-no" title="statement not covered" >push(label);</span>
+        }
+    }
+&nbsp;
+    return <span class="cstat-no" title="statement not covered" >result;</span>
+};
+&nbsp;
+/**
+ * Displays the {ImageWrapper} in a given canvas
+ * @param canvas {Canvas} The canvas element to write to
+ * @param scale {Number} Scale which is applied to each pixel-value
+ */
+ImageWrapper.prototype.show = <span class="fstat-no" title="function not covered" >function(canvas, scale) {</span>
+    var <span class="cstat-no" title="statement not covered" >ctx,</span>
+        frame,
+        data,
+        current,
+        pixel,
+        x,
+        y;
+&nbsp;
+    if (<span class="cstat-no" title="statement not covered" >!scale) {</span>
+        scale = <span class="cstat-no" title="statement not covered" >1.0;</span>
+    }
+    ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
+    canvas.<span class="cstat-no" title="statement not covered" >width = this.size.x;</span>
+    canvas.<span class="cstat-no" title="statement not covered" >height = this.size.y;</span>
+    frame = <span class="cstat-no" title="statement not covered" >ctx.getImageData(0, 0, canvas.width, canvas.height);</span>
+    data = <span class="cstat-no" title="statement not covered" >frame.data;</span>
+    current = <span class="cstat-no" title="statement not covered" >0;</span>
+    for (<span class="cstat-no" title="statement not covered" >y = 0; y &lt; this.size.y; y++) {</span>
+        for (<span class="cstat-no" title="statement not covered" >x = 0; x &lt; this.size.x; x++) {</span>
+            pixel = <span class="cstat-no" title="statement not covered" >y * this.size.x + x;</span>
+            current = <span class="cstat-no" title="statement not covered" >this.get(x, y) * scale;</span>
+            data[<span class="cstat-no" title="statement not covered" >pixel * 4 + 0] = current;</span>
+            data[<span class="cstat-no" title="statement not covered" >pixel * 4 + 1] = current;</span>
+            data[<span class="cstat-no" title="statement not covered" >pixel * 4 + 2] = current;</span>
+            data[<span class="cstat-no" title="statement not covered" >pixel * 4 + 3] = 255;</span>
+        }
+    }
+    //frame.data = data;
+    ctx.<span class="cstat-no" title="statement not covered" >putImageData(frame, 0, 0);</span>
+};
+&nbsp;
+/**
+ * Displays the {SubImage} in a given canvas
+ * @param canvas {Canvas} The canvas element to write to
+ * @param scale {Number} Scale which is applied to each pixel-value
+ */
+ImageWrapper.prototype.overlay = <span class="fstat-no" title="function not covered" >function(canvas, scale, from) {</span>
+    if (<span class="cstat-no" title="statement not covered" >!scale || scale &lt; 0 || scale &gt; 360) {</span>
+        scale = <span class="cstat-no" title="statement not covered" >360;</span>
+    }
+    var <span class="cstat-no" title="statement not covered" >hsv = [0, 1, 1];</span>
+    var <span class="cstat-no" title="statement not covered" >rgb = [0, 0, 0];</span>
+    var <span class="cstat-no" title="statement not covered" >whiteRgb = [255, 255, 255];</span>
+    var <span class="cstat-no" title="statement not covered" >blackRgb = [0, 0, 0];</span>
+    var <span class="cstat-no" title="statement not covered" >result = [];</span>
+    var <span class="cstat-no" title="statement not covered" >ctx = canvas.getContext('2d');</span>
+    var <span class="cstat-no" title="statement not covered" >frame = ctx.getImageData(from.x, from.y, this.size.x, this.size.y);</span>
+    var <span class="cstat-no" title="statement not covered" >data = frame.data;</span>
+    var <span class="cstat-no" title="statement not covered" >length = this.data.length;</span>
+    while (<span class="cstat-no" title="statement not covered" >length--) {</span>
+        hsv[<span class="cstat-no" title="statement not covered" >0] = this.data[length] * scale;</span>
+        result = <span class="cstat-no" title="statement not covered" >hsv[0] &lt;= 0 ? whiteRgb : hsv[0] &gt;= 360 ? blackRgb : hsv2rgb(hsv, rgb);</span>
+        data[<span class="cstat-no" title="statement not covered" >length * 4 + 0] = result[0];</span>
+        data[<span class="cstat-no" title="statement not covered" >length * 4 + 1] = result[1];</span>
+        data[<span class="cstat-no" title="statement not covered" >length * 4 + 2] = result[2];</span>
+        data[<span class="cstat-no" title="statement not covered" >length * 4 + 3] = 255;</span>
+    }
+    ctx.<span class="cstat-no" title="statement not covered" >putImageData(frame, from.x, from.y);</span>
+};
+&nbsp;
+export default ImageWrapper;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jul 31 2020 11:29:00 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

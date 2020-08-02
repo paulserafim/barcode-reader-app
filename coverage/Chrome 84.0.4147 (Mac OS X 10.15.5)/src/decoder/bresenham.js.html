@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/decoder/bresenham.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/decoder/</a> bresenham.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.95% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/86</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.53% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.84% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>9/83</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">1 branch</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import ImageWrapper from '../common/image_wrapper';
+&nbsp;
+var Bresenham = {};
+&nbsp;
+var Slope = {
+    DIR: {
+        UP: 1,
+        DOWN: -1
+    }
+};
+/**
+ * Scans a line of the given image from point p1 to p2 and returns a result object containing
+ * gray-scale values (0-255) of the underlying pixels in addition to the min
+ * and max values.
+ * @param {Object} imageWrapper
+ * @param {Object} p1 The start point {x,y}
+ * @param {Object} p2 The end point {x,y}
+ * @returns {line, min, max}
+ */
+Bresenham.getBarcodeLine = <span class="fstat-no" title="function not covered" >function(imageWrapper, p1, p2) {</span>
+    var <span class="cstat-no" title="statement not covered" >x0 = p1.x | 0,</span>
+        y0 = p1.y | 0,
+        x1 = p2.x | 0,
+        y1 = p2.y | 0,
+        steep = Math.abs(y1 - y0) &gt; Math.abs(x1 - x0),
+        deltax,
+        deltay,
+        error,
+        ystep,
+        y,
+        tmp,
+        x,
+        line = [],
+        imageData = imageWrapper.data,
+        width = imageWrapper.size.x,
+        sum = 0,
+        val,
+        min = 255,
+        max = 0;
+&nbsp;
+    function <span class="fstat-no" title="function not covered" >read(a, b) {</span>
+        val = <span class="cstat-no" title="statement not covered" >imageData[b * width + a];</span>
+        sum += <span class="cstat-no" title="statement not covered" >val;</span>
+        min = <span class="cstat-no" title="statement not covered" >val &lt; min ? val : min;</span>
+        max = <span class="cstat-no" title="statement not covered" >val &gt; max ? val : max;</span>
+        line.<span class="cstat-no" title="statement not covered" >push(val);</span>
+    }
+&nbsp;
+    if (<span class="cstat-no" title="statement not covered" >steep) {</span>
+        tmp = <span class="cstat-no" title="statement not covered" >x0;</span>
+        x0 = <span class="cstat-no" title="statement not covered" >y0;</span>
+        y0 = <span class="cstat-no" title="statement not covered" >tmp;</span>
+&nbsp;
+        tmp = <span class="cstat-no" title="statement not covered" >x1;</span>
+        x1 = <span class="cstat-no" title="statement not covered" >y1;</span>
+        y1 = <span class="cstat-no" title="statement not covered" >tmp;</span>
+    }
+    if (<span class="cstat-no" title="statement not covered" >x0 &gt; x1) {</span>
+        tmp = <span class="cstat-no" title="statement not covered" >x0;</span>
+        x0 = <span class="cstat-no" title="statement not covered" >x1;</span>
+        x1 = <span class="cstat-no" title="statement not covered" >tmp;</span>
+&nbsp;
+        tmp = <span class="cstat-no" title="statement not covered" >y0;</span>
+        y0 = <span class="cstat-no" title="statement not covered" >y1;</span>
+        y1 = <span class="cstat-no" title="statement not covered" >tmp;</span>
+    }
+    deltax = <span class="cstat-no" title="statement not covered" >x1 - x0;</span>
+    deltay = <span class="cstat-no" title="statement not covered" >Math.abs(y1 - y0);</span>
+    error = (<span class="cstat-no" title="statement not covered" >deltax / 2) | 0;</span>
+    y = <span class="cstat-no" title="statement not covered" >y0;</span>
+    ystep = <span class="cstat-no" title="statement not covered" >y0 &lt; y1 ? 1 : -1;</span>
+    for ( <span class="cstat-no" title="statement not covered" >x = x0; x &lt; x1; x++) {</span>
+        if (<span class="cstat-no" title="statement not covered" >steep){</span>
+            read(<span class="cstat-no" title="statement not covered" >y, x);</span>
+        } else {
+            read(<span class="cstat-no" title="statement not covered" >x, y);</span>
+        }
+        error = <span class="cstat-no" title="statement not covered" >error - deltay;</span>
+        if (<span class="cstat-no" title="statement not covered" >error &lt; 0) {</span>
+            y = <span class="cstat-no" title="statement not covered" >y + ystep;</span>
+            error = <span class="cstat-no" title="statement not covered" >error + deltax;</span>
+        }
+    }
+&nbsp;
+    return <span class="cstat-no" title="statement not covered" >{</span>
+        line: line,
+        min: min,
+        max: max
+    };
+};
+&nbsp;
+/**
+ * Converts the result from getBarcodeLine into a binary representation
+ * also considering the frequency and slope of the signal for more robust results
+ * @param {Object} result {line, min, max}
+ */
+Bresenham.toBinaryLine = <span class="fstat-no" title="function not covered" >function(result) {</span>
+    var <span class="cstat-no" title="statement not covered" >min = result.min,</span>
+        max = result.max,
+        line = result.line,
+        slope,
+        slope2,
+        center = min + (max - min) / 2,
+        extrema = [],
+        currentDir,
+        dir,
+        threshold = (max - min) / 12,
+        rThreshold = -threshold,
+        i,
+        j;
+&nbsp;
+    // 1. find extrema
+    currentDir = <span class="cstat-no" title="statement not covered" >line[0] &gt; center ? Slope.DIR.UP : Slope.DIR.DOWN;</span>
+    extrema.<span class="cstat-no" title="statement not covered" >push({</span>
+        pos: 0,
+        val: line[0]
+    });
+    for ( <span class="cstat-no" title="statement not covered" >i = 0; i &lt; line.length - 2; i++) {</span>
+        slope = (<span class="cstat-no" title="statement not covered" >line[i + 1] - line[i]);</span>
+        slope2 = (<span class="cstat-no" title="statement not covered" >line[i + 2] - line[i + 1]);</span>
+        if ((<span class="cstat-no" title="statement not covered" >slope + slope2) &lt; rThreshold &amp;&amp; line[i + 1] &lt; (center * 1.5)) {</span>
+            dir = <span class="cstat-no" title="statement not covered" >Slope.DIR.DOWN;</span>
+        } else <span class="cstat-no" title="statement not covered" >if ((slope + slope2) &gt; threshold &amp;&amp; line[i + 1] &gt; (center * 0.5)) {</span>
+            dir = <span class="cstat-no" title="statement not covered" >Slope.DIR.UP;</span>
+        } else {
+            dir = <span class="cstat-no" title="statement not covered" >currentDir;</span>
+        }
+&nbsp;
+        if (<span class="cstat-no" title="statement not covered" >currentDir !== dir) {</span>
+            extrema.<span class="cstat-no" title="statement not covered" >push({</span>
+                pos: i,
+                val: line[i]
+            });
+            currentDir = <span class="cstat-no" title="statement not covered" >dir;</span>
+        }
+    }
+    extrema.<span class="cstat-no" title="statement not covered" >push({</span>
+        pos: line.length,
+        val: line[line.length - 1]
+    });
+&nbsp;
+    for ( <span class="cstat-no" title="statement not covered" >j = extrema[0].pos; j &lt; extrema[1].pos; j++) {</span>
+        line[<span class="cstat-no" title="statement not covered" >j] = line[j] &gt; center ? 0 : 1;</span>
+    }
+&nbsp;
+    // iterate over extrema and convert to binary based on avg between minmax
+    for ( <span class="cstat-no" title="statement not covered" >i = 1; i &lt; extrema.length - 1; i++) {</span>
+        if (<span class="cstat-no" title="statement not covered" >extrema[i + 1].val &gt; extrema[i].val) {</span>
+            threshold = (<span class="cstat-no" title="statement not covered" >extrema[i].val + ((extrema[i + 1].val - extrema[i].val) / 3) * 2) | 0;</span>
+        } else {
+            threshold = (<span class="cstat-no" title="statement not covered" >extrema[i + 1].val + ((extrema[i].val - extrema[i + 1].val) / 3)) | 0;</span>
+        }
+&nbsp;
+        for ( <span class="cstat-no" title="statement not covered" >j = extrema[i].pos; j &lt; extrema[i + 1].pos; j++) {</span>
+            line[<span class="cstat-no" title="statement not covered" >j] = line[j] &gt; threshold ? 0 : 1;</span>
+        }
+    }
+&nbsp;
+    return <span class="cstat-no" title="statement not covered" >{</span>
+        line: line,
+        threshold: threshold
+    };
+};
+&nbsp;
+/**
+ * Used for development only
+ */
+Bresenham.debug = {
+    printFrequency: <span class="fstat-no" title="function not covered" >function(line, canvas) {</span>
+        var <span class="cstat-no" title="statement not covered" >i,</span>
+            ctx = canvas.getContext("2d");
+        canvas.<span class="cstat-no" title="statement not covered" >width = line.length;</span>
+        canvas.<span class="cstat-no" title="statement not covered" >height = 256;</span>
+&nbsp;
+        ctx.<span class="cstat-no" title="statement not covered" >beginPath();</span>
+        ctx.<span class="cstat-no" title="statement not covered" >strokeStyle = "blue";</span>
+        for ( <span class="cstat-no" title="statement not covered" >i = 0; i &lt; line.length; i++) {</span>
+            ctx.<span class="cstat-no" title="statement not covered" >moveTo(i, 255);</span>
+            ctx.<span class="cstat-no" title="statement not covered" >lineTo(i, 255 - line[i]);</span>
+        }
+        ctx.<span class="cstat-no" title="statement not covered" >stroke();</span>
+        ctx.<span class="cstat-no" title="statement not covered" >closePath();</span>
+    },
+&nbsp;
+    printPattern: <span class="fstat-no" title="function not covered" >function(line, canvas) {</span>
+        var <span class="cstat-no" title="statement not covered" >ctx = canvas.getContext("2d"), i;</span>
+&nbsp;
+        canvas.<span class="cstat-no" title="statement not covered" >width = line.length;</span>
+        ctx.<span class="cstat-no" title="statement not covered" >fillColor = "black";</span>
+        for ( <span class="cstat-no" title="statement not covered" >i = 0; i &lt; line.length; i++) {</span>
+            if (<span class="cstat-no" title="statement not covered" >line[i] === 1) {</span>
+                ctx.<span class="cstat-no" title="statement not covered" >fillRect(i, 0, 1, 100);</span>
+            }
+        }
+    }
+};
+&nbsp;
+export default Bresenham;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jul 31 2020 11:29:00 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/input/image_loader.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/input/</a> image_loader.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.6% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.63% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/41</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">2 statements</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {findTagsInObjectURL} from './exif_helper';
+&nbsp;
+var ImageLoader = {};
+ImageLoader.load = <span class="fstat-no" title="function not covered" >function(directory, callback, offset, size, sequence) {</span>
+    var <span class="cstat-no" title="statement not covered" >htmlImagesSrcArray = new Array(size),</span>
+        htmlImagesArray = new Array(htmlImagesSrcArray.length),
+        i,
+        img,
+        num;
+&nbsp;
+    if (<span class="cstat-no" title="statement not covered" >sequence === false) {</span>
+        htmlImagesSrcArray[<span class="cstat-no" title="statement not covered" >0] = directory;</span>
+    } else {
+        for ( <span class="cstat-no" title="statement not covered" >i = 0; i &lt; htmlImagesSrcArray.length; i++) {</span>
+            num = (<span class="cstat-no" title="statement not covered" >offset + i);</span>
+            htmlImagesSrcArray[<span class="cstat-no" title="statement not covered" >i] = directory + "image-" + ("00" + num).slice(-3) + ".jpg";</span>
+        }
+    }
+    htmlImagesArray.<span class="cstat-no" title="statement not covered" >notLoaded = [];</span>
+    htmlImagesArray.<span class="cstat-no" title="statement not covered" >addImage = <span class="fstat-no" title="function not covered" >function(image) {</span></span>
+        htmlImagesArray.<span class="cstat-no" title="statement not covered" >notLoaded.push(image);</span>
+    };
+    htmlImagesArray.<span class="cstat-no" title="statement not covered" >loaded = <span class="fstat-no" title="function not covered" >function(loadedImg) {</span></span>
+        var <span class="cstat-no" title="statement not covered" >notloadedImgs = htmlImagesArray.notLoaded;</span>
+        for (<span class="cstat-no" title="statement not covered" >var x = 0; x &lt; notloadedImgs.length; x++) {</span>
+            if (<span class="cstat-no" title="statement not covered" >notloadedImgs[x] === loadedImg) {</span>
+                notloadedImgs.<span class="cstat-no" title="statement not covered" >splice(x, 1);</span>
+                for (<span class="cstat-no" title="statement not covered" >var y = 0; y &lt; htmlImagesSrcArray.length; y++) {</span>
+                    var <span class="cstat-no" title="statement not covered" >imgName = htmlImagesSrcArray[y].substr(htmlImagesSrcArray[y].lastIndexOf("/"));</span>
+                    if (<span class="cstat-no" title="statement not covered" >loadedImg.src.lastIndexOf(imgName) !== -1) {</span>
+                        htmlImagesArray[<span class="cstat-no" title="statement not covered" >y] = {img: loadedImg};</span>
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+        if (<span class="cstat-no" title="statement not covered" >notloadedImgs.length === 0) {</span>
+            if (<span class="cstat-no" title="statement not covered" >ENV.development) {</span>
+                console.<span class="cstat-no" title="statement not covered" >log("Images loaded");</span>
+            }
+            if (<span class="cstat-no" title="statement not covered" >sequence === false) {</span>
+                findTagsInObjectURL(<span class="cstat-no" title="statement not covered" >directory, ['orientation'])</span>
+                    .then(<span class="fstat-no" title="function not covered" >tags =&gt; {</span>
+                        htmlImagesArray[<span class="cstat-no" title="statement not covered" >0].tags = tags;</span>
+                        callback(<span class="cstat-no" title="statement not covered" >htmlImagesArray);</span>
+                    }).catch(<span class="fstat-no" title="function not covered" >e =&gt; {</span>
+                        console.<span class="cstat-no" title="statement not covered" >log(e);</span>
+                        callback(<span class="cstat-no" title="statement not covered" >htmlImagesArray);</span>
+                    });
+            } else {
+                callback(<span class="cstat-no" title="statement not covered" >htmlImagesArray);</span>
+            }
+        }
+    };
+&nbsp;
+    for ( <span class="cstat-no" title="statement not covered" >i = 0; i &lt; htmlImagesSrcArray.length; i++) {</span>
+        img = <span class="cstat-no" title="statement not covered" >new Image();</span>
+        htmlImagesArray.<span class="cstat-no" title="statement not covered" >addImage(img);</span>
+        addOnloadHandler(<span class="cstat-no" title="statement not covered" >img, htmlImagesArray);</span>
+        img.<span class="cstat-no" title="statement not covered" >src = htmlImagesSrcArray[i];</span>
+    }
+};
+&nbsp;
+<span class="fstat-no" title="function not covered" >function addOnloadHandler(img, htmlImagesArray) {</span>
+    img.<span class="cstat-no" title="statement not covered" >onload = <span class="fstat-no" title="function not covered" >function() {</span></span>
+        htmlImagesArray.<span class="cstat-no" title="statement not covered" >loaded(this);</span>
+    };
+}
+&nbsp;
+export default (ImageLoader);
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jul 31 2020 11:29:00 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

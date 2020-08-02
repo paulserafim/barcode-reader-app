@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/reader/code_39_reader.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/reader/</a> code_39_reader.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.66% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/93</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/40</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.47% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/85</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">4 statements, 1 branch</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import BarcodeReader from './barcode_reader';
+import ArrayHelper from '../common/array_helper';
+&nbsp;
+<span class="fstat-no" title="function not covered" >function Code39Reader() {</span>
+    BarcodeReader.<span class="cstat-no" title="statement not covered" >call(this);</span>
+}
+&nbsp;
+var properties = {
+    ALPHABETH_STRING: {value: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. *$/+%"},
+    ALPHABET: {value: [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78,
+        79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 45, 46, 32, 42, 36, 47, 43, 37]},
+    CHARACTER_ENCODINGS: {value: [0x034, 0x121, 0x061, 0x160, 0x031, 0x130, 0x070, 0x025, 0x124, 0x064, 0x109, 0x049,
+        0x148, 0x019, 0x118, 0x058, 0x00D, 0x10C, 0x04C, 0x01C, 0x103, 0x043, 0x142, 0x013, 0x112, 0x052, 0x007, 0x106,
+        0x046, 0x016, 0x181, 0x0C1, 0x1C0, 0x091, 0x190, 0x0D0, 0x085, 0x184, 0x0C4, 0x094, 0x0A8, 0x0A2, 0x08A, 0x02A
+    ]},
+    ASTERISK: {value: 0x094},
+    FORMAT: {value: "code_39", writeable: false}
+};
+&nbsp;
+Code39Reader.prototype = Object.create(BarcodeReader.prototype, properties);
+Code39Reader.prototype.constructor = Code39Reader;
+&nbsp;
+Code39Reader.prototype._decode = <span class="fstat-no" title="function not covered" >function() {</span>
+    var <span class="cstat-no" title="statement not covered" >self = this,</span>
+        counters = [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        result = [],
+        start = self._findStart(),
+        decodedChar,
+        lastStart,
+        pattern,
+        nextStart;
+&nbsp;
+    if (<span class="cstat-no" title="statement not covered" >!start) {</span>
+        return <span class="cstat-no" title="statement not covered" >null;</span>
+    }
+    nextStart = <span class="cstat-no" title="statement not covered" >self._nextSet(self._row, start.end);</span>
+&nbsp;
+    do <span class="cstat-no" title="statement not covered" >{</span>
+        counters = <span class="cstat-no" title="statement not covered" >self._toCounters(nextStart, counters);</span>
+        pattern = <span class="cstat-no" title="statement not covered" >self._toPattern(counters);</span>
+        if (<span class="cstat-no" title="statement not covered" >pattern &lt; 0) {</span>
+            return <span class="cstat-no" title="statement not covered" >null;</span>
+        }
+        decodedChar = <span class="cstat-no" title="statement not covered" >self._patternToChar(pattern);</span>
+        if (<span class="cstat-no" title="statement not covered" >decodedChar &lt; 0){</span>
+            return <span class="cstat-no" title="statement not covered" >null;</span>
+        }
+        result.<span class="cstat-no" title="statement not covered" >push(decodedChar);</span>
+        lastStart = <span class="cstat-no" title="statement not covered" >nextStart;</span>
+        nextStart += <span class="cstat-no" title="statement not covered" >ArrayHelper.sum(counters);</span>
+        nextStart = <span class="cstat-no" title="statement not covered" >self._nextSet(self._row, nextStart);</span>
+    } while (decodedChar !== '*');
+    result.<span class="cstat-no" title="statement not covered" >pop();</span>
+&nbsp;
+    if (<span class="cstat-no" title="statement not covered" >!result.length) {</span>
+        return <span class="cstat-no" title="statement not covered" >null;</span>
+    }
+&nbsp;
+    if (<span class="cstat-no" title="statement not covered" >!self._verifyTrailingWhitespace(lastStart, nextStart, counters)) {</span>
+        return <span class="cstat-no" title="statement not covered" >null;</span>
+    }
+&nbsp;
+    return <span class="cstat-no" title="statement not covered" >{</span>
+        code: result.join(""),
+        start: start.start,
+        end: nextStart,
+        startInfo: start,
+        decodedCodes: result
+    };
+};
+&nbsp;
+Code39Reader.prototype._verifyTrailingWhitespace = <span class="fstat-no" title="function not covered" >function(lastStart, nextStart, counters) {</span>
+    var <span class="cstat-no" title="statement not covered" >trailingWhitespaceEnd,</span>
+        patternSize = ArrayHelper.sum(counters);
+&nbsp;
+    trailingWhitespaceEnd = <span class="cstat-no" title="statement not covered" >nextStart - lastStart - patternSize;</span>
+    if ((<span class="cstat-no" title="statement not covered" >trailingWhitespaceEnd * 3) &gt;= patternSize) {</span>
+        return <span class="cstat-no" title="statement not covered" >true;</span>
+    }
+    return <span class="cstat-no" title="statement not covered" >false;</span>
+};
+&nbsp;
+Code39Reader.prototype._patternToChar = <span class="fstat-no" title="function not covered" >function(pattern) {</span>
+    var <span class="cstat-no" title="statement not covered" >i,</span>
+        self = this;
+&nbsp;
+    for (<span class="cstat-no" title="statement not covered" >i = 0; i &lt; self.CHARACTER_ENCODINGS.length; i++) {</span>
+        if (<span class="cstat-no" title="statement not covered" >self.CHARACTER_ENCODINGS[i] === pattern) {</span>
+            return <span class="cstat-no" title="statement not covered" >String.fromCharCode(self.ALPHABET[i]);</span>
+        }
+    }
+    return <span class="cstat-no" title="statement not covered" >-1;</span>
+};
+&nbsp;
+Code39Reader.prototype._findNextWidth = <span class="fstat-no" title="function not covered" >function(counters, current) {</span>
+    var <span class="cstat-no" title="statement not covered" >i,</span>
+        minWidth = Number.MAX_VALUE;
+&nbsp;
+    for (<span class="cstat-no" title="statement not covered" >i = 0; i &lt; counters.length; i++) {</span>
+        if (<span class="cstat-no" title="statement not covered" >counters[i] &lt; minWidth &amp;&amp; counters[i] &gt; current) {</span>
+            minWidth = <span class="cstat-no" title="statement not covered" >counters[i];</span>
+        }
+    }
+&nbsp;
+    return <span class="cstat-no" title="statement not covered" >minWidth;</span>
+};
+&nbsp;
+Code39Reader.prototype._toPattern = <span class="fstat-no" title="function not covered" >function(counters) {</span>
+    var <span class="cstat-no" title="statement not covered" >numCounters = counters.length,</span>
+        maxNarrowWidth = 0,
+        numWideBars = numCounters,
+        wideBarWidth = 0,
+        self = this,
+        pattern,
+        i;
+&nbsp;
+    while (<span class="cstat-no" title="statement not covered" >numWideBars &gt; 3) {</span>
+        maxNarrowWidth = <span class="cstat-no" title="statement not covered" >self._findNextWidth(counters, maxNarrowWidth);</span>
+        numWideBars = <span class="cstat-no" title="statement not covered" >0;</span>
+        pattern = <span class="cstat-no" title="statement not covered" >0;</span>
+        for (<span class="cstat-no" title="statement not covered" >i = 0; i &lt; numCounters; i++) {</span>
+            if (<span class="cstat-no" title="statement not covered" >counters[i] &gt; maxNarrowWidth) {</span>
+                pattern |= <span class="cstat-no" title="statement not covered" >1 &lt;&lt; (numCounters - 1 - i);</span>
+                numWideBars++;
+                wideBarWidth += <span class="cstat-no" title="statement not covered" >counters[i];</span>
+            }
+        }
+&nbsp;
+        if (<span class="cstat-no" title="statement not covered" >numWideBars === 3) {</span>
+            for (<span class="cstat-no" title="statement not covered" >i = 0; i &lt; numCounters &amp;&amp; numWideBars &gt; 0; i++) {</span>
+                if (<span class="cstat-no" title="statement not covered" >counters[i] &gt; maxNarrowWidth) {</span>
+                    numWideBars--;
+                    if ((<span class="cstat-no" title="statement not covered" >counters[i] * 2) &gt;= wideBarWidth) {</span>
+                        return <span class="cstat-no" title="statement not covered" >-1;</span>
+                    }
+                }
+            }
+            return <span class="cstat-no" title="statement not covered" >pattern;</span>
+        }
+    }
+    return <span class="cstat-no" title="statement not covered" >-1;</span>
+};
+&nbsp;
+Code39Reader.prototype._findStart = <span class="fstat-no" title="function not covered" >function() {</span>
+    var <span class="cstat-no" title="statement not covered" >self = this,</span>
+        offset = self._nextSet(self._row),
+        patternStart = offset,
+        counter = [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        counterPos = 0,
+        isWhite = false,
+        i,
+        j,
+        whiteSpaceMustStart;
+&nbsp;
+    for ( <span class="cstat-no" title="statement not covered" >i = offset; i &lt; self._row.length; i++) {</span>
+        if (<span class="cstat-no" title="statement not covered" >self._row[i] ^ isWhite) {</span>
+            counter[<span class="cstat-no" title="statement not covered" >counterPos]++;</span>
+        } else {
+            if (<span class="cstat-no" title="statement not covered" >counterPos === counter.length - 1) {</span>
+                // find start pattern
+                if (<span class="cstat-no" title="statement not covered" >self._toPattern(counter) === self.ASTERISK) {</span>
+                    whiteSpaceMustStart = <span class="cstat-no" title="statement not covered" >Math.floor(Math.max(0, patternStart - ((i - patternStart) / 4)));</span>
+                    if (<span class="cstat-no" title="statement not covered" >self._matchRange(whiteSpaceMustStart, patternStart, 0)) {</span>
+                        return <span class="cstat-no" title="statement not covered" >{</span>
+                            start: patternStart,
+                            end: i
+                        };
+                    }
+                }
+&nbsp;
+                patternStart += <span class="cstat-no" title="statement not covered" >counter[0] + counter[1];</span>
+                for ( <span class="cstat-no" title="statement not covered" >j = 0; j &lt; 7; j++) {</span>
+                    counter[<span class="cstat-no" title="statement not covered" >j] = counter[j + 2];</span>
+                }
+                counter[<span class="cstat-no" title="statement not covered" >7] = 0;</span>
+                counter[<span class="cstat-no" title="statement not covered" >8] = 0;</span>
+                counterPos--;
+            } else {
+                counterPos++;
+            }
+            counter[<span class="cstat-no" title="statement not covered" >counterPos] = 1;</span>
+            isWhite = <span class="cstat-no" title="statement not covered" >!isWhite;</span>
+        }
+    }
+    return <span class="cstat-no" title="statement not covered" >null;</span>
+};
+&nbsp;
+export default Code39Reader;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jul 31 2020 11:29:00 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/input/exif_helper.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/input/</a> exif_helper.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.37% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>76/86</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">62.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>25/40</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.24% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.34% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>69/79</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">8858×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">59×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Scraped from https://github.com/exif-js/exif-js
+&nbsp;
+const ExifTags = {0x0112: "orientation"};
+export const AvailableTags = Object.keys(ExifTags).map(key =&gt; ExifTags[key]);
+&nbsp;
+export function findTagsInObjectURL(src, tags = <span class="branch-1 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >A</span></span>vailableTags) {
+    if (/^blob\:/i.test(src)) {
+        return objectURLToBlob(src)
+            .then(readToBuffer)
+            .then(<span class="fstat-no" title="function not covered" >buffer =&gt; <span class="cstat-no" title="statement not covered" >findTagsInBuffer(buffer, tags));</span></span>
+    }
+    return Promise.resolve(null);
+}
+&nbsp;
+export function base64ToArrayBuffer(dataUrl) {
+    const base64 = dataUrl.replace(/^data\:([^\;]+)\;base64,/gmi, ''),
+        binary = atob(base64),
+        len = binary.length,
+        buffer = new ArrayBuffer(len),
+        view = new Uint8Array(buffer);
+&nbsp;
+    for (let i = 0; i &lt; len; i++) {
+        view[i] = binary.charCodeAt(i);
+    }
+    return buffer;
+}
+&nbsp;
+function readToBuffer(blob) {
+    return new Promise(resolve =&gt; {
+        const fileReader = new FileReader();
+        fileReader.onload = <span class="fstat-no" title="function not covered" >function(e) {</span>
+            return <span class="cstat-no" title="statement not covered" >resolve(e.target.result);</span>
+        };
+        fileReader.readAsArrayBuffer(blob);
+    });
+}
+&nbsp;
+function objectURLToBlob(url) {
+    return new Promise((resolve, reject) =&gt; {
+        const http = new XMLHttpRequest();
+        http.open("GET", url, true);
+        http.responseType = "blob";
+        http.onreadystatechange = function () {
+            if (<span class="missing-if-branch" title="else path not taken" >E</span>http.readyState === XMLHttpRequest.DONE &amp;&amp; (http.status === 200 || http.status === 0)) {
+                resolve(this.response);
+            }
+        };
+        http.onerror = reject;
+        http.send();
+    });
+}
+&nbsp;
+export function findTagsInBuffer(file, selectedTags = <span class="branch-1 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >A</span></span>vailableTags) {
+    const dataView = new DataView(file),
+        length = file.byteLength,
+        exifTags = selectedTags.reduce((result, selectedTag) =&gt; {
+            const exifTag = Object.keys(ExifTags).filter(tag =&gt; ExifTags[tag] === selectedTag)[0];
+            if (<span class="missing-if-branch" title="else path not taken" >E</span>exifTag) {
+                result[exifTag] = selectedTag;
+            }
+            return result;
+        }, {});
+    let offset = 2,
+        marker;
+&nbsp;
+    if ((<span class="missing-if-branch" title="if path not taken" >I</span>dataView.getUint8(0) !== 0xFF) || (dataView.getUint8(1) !== 0xD8)) {
+        return <span class="cstat-no" title="statement not covered" >false;</span>
+    }
+&nbsp;
+    while (offset &lt; length) {
+        if (<span class="missing-if-branch" title="if path not taken" >I</span>dataView.getUint8(offset) !== 0xFF) {
+            return <span class="cstat-no" title="statement not covered" >false;</span>
+        }
+&nbsp;
+        marker = dataView.getUint8(offset + 1);
+        if (marker === 0xE1) {
+            return readEXIFData(dataView, offset + 4, exifTags);
+        } else {
+            offset += 2 + dataView.getUint16(offset + 2);
+        }
+    }
+}
+&nbsp;
+function readEXIFData(file, start, exifTags) {
+    if (<span class="missing-if-branch" title="if path not taken" >I</span>getStringFromBuffer(file, start, 4) !== "Exif") {
+        return <span class="cstat-no" title="statement not covered" >false;</span>
+    }
+&nbsp;
+    const tiffOffset = start + 6;
+    let bigEnd,
+        tags;
+&nbsp;
+    if (<span class="missing-if-branch" title="else path not taken" >E</span>file.getUint16(tiffOffset) === 0x4949) {
+        bigEnd = false;
+    } else <span class="cstat-no" title="statement not covered" >if (file.getUint16(tiffOffset) === 0x4D4D) {</span>
+        bigEnd = <span class="cstat-no" title="statement not covered" >true;</span>
+    } else {
+        return <span class="cstat-no" title="statement not covered" >false;</span>
+    }
+&nbsp;
+    if (<span class="missing-if-branch" title="if path not taken" >I</span>file.getUint16(tiffOffset + 2, !bigEnd) !== 0x002A) {
+        return <span class="cstat-no" title="statement not covered" >false;</span>
+    }
+&nbsp;
+    const firstIFDOffset = file.getUint32(tiffOffset + 4, !bigEnd);
+    if (<span class="missing-if-branch" title="if path not taken" >I</span>firstIFDOffset &lt; 0x00000008) {
+        return <span class="cstat-no" title="statement not covered" >false;</span>
+    }
+&nbsp;
+    tags = readTags(file, tiffOffset, tiffOffset + firstIFDOffset, exifTags, bigEnd);
+    return tags;
+}
+&nbsp;
+function readTags(file, tiffStart, dirStart, strings, bigEnd) {
+    const entries = file.getUint16(dirStart, !bigEnd),
+        tags = {};
+&nbsp;
+    for (let i = 0; i &lt; entries; i++) {
+        const entryOffset = dirStart + i * 12 + 2,
+            tag = strings[file.getUint16(entryOffset, !bigEnd)];
+        if (tag) {
+            tags[tag] = readTagValue(file, entryOffset, tiffStart, dirStart, bigEnd);
+        }
+    }
+    return tags;
+}
+&nbsp;
+function readTagValue(file, entryOffset, tiffStart, dirStart, bigEnd) {
+    const type = file.getUint16(entryOffset + 2, !bigEnd),
+        numValues = file.getUint32(entryOffset + 4, !bigEnd);
+&nbsp;
+    switch (type) {
+    case 3:
+        if (<span class="missing-if-branch" title="else path not taken" >E</span>numValues === 1) {
+            return file.getUint16(entryOffset + 8, !bigEnd);
+        }
+    }
+}
+&nbsp;
+function getStringFromBuffer(buffer, start, length) {
+    let outstr = "";
+    for (let n = start; n &lt; start + length; n++) {
+        outstr += String.fromCharCode(buffer.getUint8(n));
+    }
+    return outstr;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jul 31 2020 11:29:00 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
