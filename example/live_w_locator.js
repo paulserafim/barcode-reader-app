@@ -1,3 +1,34 @@
+function sendEmail() {
+  console.log("email sent");
+
+  var userInput = [];
+
+  var index = 0;
+
+  var request = new Object();
+  request.productEntityList = [];
+  var element = new Object();
+  element.barcode = "";
+  element.quantity = "";
+
+  for (
+    index = 0;
+    index < document.getElementsByClassName("code").length;
+    index++
+  ) {
+    element.barcode = document.getElementsByClassName("code")[index].innerHTML;
+    element.quantity = document.getElementsByClassName("quantity")[
+      index
+    ].value.parseInt;
+
+    request.productEntityList[index] = element;
+  }
+
+  console.log(request);
+
+  postData("http://localhost:8080/send/new", request).then((data) => {});
+}
+
 $(function () {
   var resultCollector = Quagga.ResultCollector.create({
     capture: true,
@@ -352,7 +383,7 @@ $(function () {
         canvas = Quagga.canvas.dom.image;
 
       $node = $(
-        '<tr><td><div class="thumbnail"><div class="caption"><h4 class="code"></h4></div></div></td><td><input type="number" id="quantity" name="quantity" min="0"><td></tr>'
+        '<tr><div class="thumbnail"><div class="caption"><td><h4 class="code"></h4></td><td><input type="number" class="quantity" name="quantity" min="0"></td></div></div></tr>'
       );
       $node.find("h4.code").html(code);
       $("#result_strip tbody.thumbnails").prepend($node);
