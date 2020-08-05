@@ -26,7 +26,10 @@ function sendEmail() {
 
   console.log(request);
 
-  postData("http://localhost:8080/send/new", request).then((data) => {});
+  postData(
+    "http://ec2-54-154-215-224.eu-west-1.compute.amazonaws.com:8080/send/new",
+    request
+  ).then((data) => {});
 }
 
 $(function () {
